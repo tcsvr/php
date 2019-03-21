@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝滚动</title>
+    <style>
+        div{
+            width: 930px;
+            height: 188px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            background: hsla(114, 75%, 70%, 0.719);
+        }
+        #prev{
+            position: absolute;
+            left: 10px;
+            top: 40%;
+            background: hsl(135, 87%, 42%,.5);
+            z-index: 999;
+        }
+        #next{
+            position: absolute;
+            right: 10px;
+            top: 40%;
+            background:  hsl(135, 87%, 42%,.5);
+            z-index: 999;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: absolute;
+            left: 0; top: 0;
+        }
+        ul li{
+            width: 300px;
+            height: 188px;
+            padding: 0 5px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 可视区的div -->
+    <!-- 2 div里面放的 a ul li img -->
+    <div id="con">
+        <a href="javascript:;" id="prev">
+            <img src="images/left.png" alt="">
+        </a>
+        <a href="javascript:;" id="next">
+            <img src="images/right.png" alt="">
+        </a>
+        <ul>
+            <li>
+                <img src="images/car-1.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car-2.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car-3.jpg" alt="">
+            </li>
+            <!-- <li>
+                <img src="images/car-4.jpg" alt="">
+            </li> -->
+        </ul>
+    </div>
+</body>
+</html>
+<script src="无缝滚动.js"></script>
+
