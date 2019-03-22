@@ -9,7 +9,7 @@ $my name = "变量名为 $my name";X
 $myName = "变量名为 $myName";Y
 $my$name = "变量名为 $my$name";X
 $my*name = "变量名为 $my*name";X
-$while = "变量名为关键字while命名的";Y
+$while = "变量名为关键字while命名的";X
 
 以上那些变量命名是错误的？
 
@@ -39,7 +39,7 @@ echo "$aworld";
 $$a = "world";=>$hello="world";
 请输出 hello world?(两种方法哦！)
 
-	echo "{$a}{$$a}"; echo "{$a}{$hello}"	
+	echo "{$a}{$$a}"; echo {$a},{$hello}	
 
 
 8）$a = "hello";
@@ -56,7 +56,9 @@ unset($b);
 9）$str1 = 'hello \n world';
 $str2 = "hello \n world";
 请问 $str1 和 $str2 这两个变量的值是否一样？(请分析思路，检查是老师询问？)
-	不一样，’‘单纯 ； “”解析 转义 换行
+
+	不一样，’‘ 单纯  ； “” 解析 转义 换行
+
 10）使用定界符语法 "<<<"输出：
 “在PHP定界符中的任何特殊字符 都不需要转义
 PHP定界符中的PHP变量会被正常的用其值来替换
@@ -68,7 +70,9 @@ PHP定界符中的PHP变量会被正常的用其值来替换
 $str =<<<DJF
 “在PHP定界符中的任何特殊字符 都不需要转义\r\nPHP定界符中的PHP变量会被正常的用其值来替换\r\n使用定界符要注意：\r\n结束标识符所在的行不能包含任何其它字符，这意味着该标识符不能被缩进，在分号之前\r\n之后都不能有任何空格或制表符;\r\n”
 DJF；
-ceho $str
+echo '<pre>';
+echo $str;
+echo '</pre>';
 
 11)请写出一下输出的数据类型。
 <?php
@@ -83,7 +87,7 @@ echo gettype(array(1, 2, 3)); 数组
 <?php
 var_dump( is_string("I am what data type?") ); T
 var_dump( is_int(123456) );T
-var_dump( is_float(3.1454556) );F
+var_dump( is_float(3.1454556) );T
 var_dump( is_bool(1 > 2) );T
 var_dump( is_array(array(1, 2, 3) ) );T
 ?>
