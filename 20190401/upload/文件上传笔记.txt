@@ -1,0 +1,40 @@
+文件上传是否成功的条件：
+1  提交的方式必须是POST.
+2  要有文件上传的控件：enctype="multipart/form-data ".
+
+限制文件上传的大小，有几种方式：
+1  可以用隐藏域  键：MAX_FILE_SIZE    值：number  123
+2  
+
+
+表单：
+<form action="提交地址" method="提交方式post">   post_max_size  8M
+	upload_max_filesize   默认为2M
+	<input type="file"  name="upload" />
+	<input type="button" value="submit" />
+</form>
+2.upload_max_filesize 
+允许上传文件大小的最大值，默认为2M，此指令必须小于post_max_size;
+4.post_max_size
+控制POST方式提交数据php所能够接收的最大数据量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

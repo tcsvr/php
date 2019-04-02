@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户表</title>
+</head>
+<body>
+	<ul>
+		<?php foreach($user as $v){ ?>
+		<li>编号： <?php echo $v['id'] ?> , 姓名：<?php echo $v['name'] ?></li>
+		<?php } ?>
+	</ul>
+	
+</body>
+</html>
