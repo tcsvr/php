@@ -233,6 +233,7 @@ repay($a,$b);
 
 
 
+<<<<<<< HEAD
 /**
  * 文件上传
  * 
@@ -321,6 +322,45 @@ function upload($name,$size = 1048576,$extArr = array('jpg','jpeg','gif','png'))
 // // return $od;
 
 // }
+=======
+function fload(){ 
+
+$fl = $_FILES[$name]['name'];
+$se = substr(strrchr($fl,'.'),'1');
+$set = array('png','gif','jpg','jpeg');
+if(!in_array($se,$set)){
+    alert('文件格式不正确，请使用 jpg png,gif,jpeg');
+}
+
+$size = 402400;
+$fz = $_FILES[$name]['size'];
+if($fz>$size){
+    alert("文件大小不能超过2M");
+}
+
+$er = $_FILES[$name]['error'];
+if($er!=0){
+    if($er==4){
+        alert('请选择上传文件');
+    }else{
+        alert('请重新上传文件');
+    }
+}
+echo $se;
+
+$tmp = $_FILES[$name]['tmp_name'];
+$fm = time().rand(10000,99999);
+$chid = date('Y/m/d/',time());
+$spth = 'images/'.$chid;
+if(!file_exists($spth)){
+    mkdir($spth,0777,true);
+}
+copy($tmp,$spth.$fm.'.'.$se);
+// $od = $tmp,$spth.$fm.'.'.$se;
+// return $od;
+
+}
+>>>>>>> 00dba3c7aab62004e6b5191c775e982afa323aca
 
 
 

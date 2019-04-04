@@ -1,8 +1,13 @@
 <?php 
 header('content-type:text/html; charset=utf-8');
 
+<<<<<<< HEAD
 // $s = 'ab\'cds\'fsd';
 // echo $s;exit;
+=======
+$s = 'ab\'cds\'fsd';
+echo $s;exit;
+>>>>>>> 00dba3c7aab62004e6b5191c775e982afa323aca
 
 $con = file_get_contents('wengdo/case_list.html');
 $pattern = "/<\/nav>\s+<ul>(.+)<\/ul>/Us";
