@@ -17,7 +17,6 @@ function pre($con){
     echo '<pre>';
     print_r($con);
     echo '</pre>';
-    exit;
 }
 
 function h(){
@@ -232,6 +231,96 @@ repay($a,$b);
 }
 
 
+
+
+/**
+ * 文件上传
+ * 
+ * 
+ * 
+ */
+function upload($name,$size = 1048576,$extArr = array('jpg','jpeg','gif','png')){
+	$error = $_FILES[$name]['error'];
+
+	if($error!=0){
+		if($error==4){
+			alert('请选择上传的文件');
+		}else{
+			alert('上传失败，请重新上传');
+		}
+	}
+
+
+	$filename = $_FILES[$name]['name'];
+	$ext = substr(strrchr($filename, '.'),1);
+	
+	if(!in_array($ext,$extArr)){
+		alert("您上传的文件类型错误，请上传jpg、jpeg、png、gif");
+	}
+	
+	
+	$fsize = $_FILES[$name]['size'];
+	if($fsize>$size){
+		alert("文件过大，不能超过2M");
+	}
+	
+	$childPath = date('Y/m/d/',time());
+	$path = 'uploads/'.$childPath;
+
+	if(!file_exists($path)){
+		mkdir($path,0777,true);
+	}
+	
+	$fname = time().rand(10000,99999);
+
+	$tmp = $_FILES[$name]['tmp_name'];
+	
+	$imgpath = $path.$fname.'.'.$ext;
+
+	copy($tmp,$imgpath);
+	return $imgpath;
+}
+
+
+
+
+// function fload(){ 
+
+// $fl = $_FILES[$name]['name'];
+// $se = substr(strrchr($fl,'.'),'1');
+// $set = array('png','gif','jpg','jpeg');
+// if(!in_array($se,$set)){
+//     alert('文件格式不正确，请使用 jpg png,gif,jpeg');
+// }
+
+// $size = 402400;
+// $fz = $_FILES[$name]['size'];
+// if($fz>$size){
+//     alert("文件大小不能超过2M");
+// }
+
+// $er = $_FILES[$name]['error'];
+// if($er!=0){
+//     if($er==4){
+//         alert('请选择上传文件');
+//     }else{
+//         alert('请重新上传文件');
+//     }
+// }
+// echo $se;
+
+// $tmp = $_FILES[$name]['tmp_name'];
+// $fm = time().rand(10000,99999);
+// $chid = date('Y/m/d/',time());
+// $spth = 'images/'.$chid;
+// if(!file_exists($spth)){
+//     mkdir($spth,0777,true);
+// }
+// copy($tmp,$spth.$fm.'.'.$se);
+// // $od = $tmp,$spth.$fm.'.'.$se;
+// // return $od;
+
+// }
 
 
 
